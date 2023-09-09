@@ -85,7 +85,7 @@ def main():
 
     st.header("Chat with multiple PDFs :books:")
     user_question = st.text_input("Ask a question about your documents:")
-    if user_question:
+    if st.button("Search") and user_question:
         vectorstore = get_vectorstore("with existing data")
         st.session_state.conversation = get_conversation_chain(vectorstore)
         handle_userinput(user_question)
